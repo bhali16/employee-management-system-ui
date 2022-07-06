@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function AddEmployee() {
+
+    const [inputLabels, setInputLabels] = useState(0)
+    
   return (
     <div className='flex max-w-2xl mx-auto shadow border-b'>
         <div className='px-8 py-8'>
+
+        <input type='number' value={inputLabels} onChange={(e) => setInputLabels(e.target.value)} className='h-10 w-96 border mt-2 px-2 py-2'></input>
             <div className='font-thin text-2xl tracking-wider'>
                 <h1>Add New Employee</h1>
             </div>
@@ -28,6 +33,7 @@ function AddEmployee() {
 
             </div>
         </div>
+        {inputLabels > 0 && <div className='flex flex-col items-center justify-center h-14 w-full my-4'>Han Jee Bahen Jee</div>}
     </div>
   )
 }
